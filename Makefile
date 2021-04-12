@@ -1,9 +1,6 @@
 PACKAGES="import_monster"
 
-all: install black
-
-black:
-	@black ${PACKAGES}
+all: install 
 
 clean:
 	@rm -rf `find . -name __pycache__`
@@ -19,13 +16,13 @@ clean:
 	@rm -rf htmlcov
 	@rm -rf build
 	@rm -rf cover
-	@python setup.py clean
+	@python3 setup.py clean
 	@rm -rf .tox
 	@rm -f .develop
 	@rm -f .flake
 
 install:
-	@pip install -r requirements.txt
+	@pip3 install -r requirements.txt
 
-install-dev:
-    @pip install -r requirements-dev.txt
+installdev:
+	@pip3 install -r requirements-dev.txt
